@@ -6,8 +6,8 @@
 
 
 //----Thông tin Wifi----------------------
-const char* ssid = "Xiaomi 11T Pro";      
-const char* password = "nhan2004";   
+const char* ssid = "Na Bull";      
+const char* password = "0902523723";   
 
 //----Thông tin MQTT Broker---------------
 const char* mqtt_server = "9c36c11f80b147c09427b67db165c3b7.s1.eu.hivemq.cloud";
@@ -16,7 +16,7 @@ const char* mqtt_username = "anhnhat";
 const char* mqtt_password = "Sn29022004";
 
 // ---------------------------------------
-
+#define LED_PIN 2 
 
 
 
@@ -90,12 +90,13 @@ void setup() {
 
   client.setServer(mqtt_server, mqtt_port);
   client.setCallback(callback);
+  pinMode(LED_PIN, OUTPUT);
 }
 
 //----------------------------------------
 void fakevalue(float &temp, float &hum, int &rainAnalog, int &rainDigital) {
-  temp = random(200, 400) / 10.0;   // 20.0 – 40.0 °C
-  hum = random(300, 900) / 10.0;    // 30.0 – 90.0 %
+  temp = random(200, 400) / 10;   // 20.0 – 40.0 °C
+  hum = random(300, 900) / 10;    // 30.0 – 90.0 %
   rainAnalog = random(0, 4096);     // 0 – 4095 (giả lập analog)
   rainDigital = random(0, 2);       // 0 hoặc 1
 }
@@ -108,13 +109,13 @@ void loop() {
   client.loop();
 
   static unsigned long lastMsg = 0;
-  if (millis() - lastMsg >2000) {  // publish mỗi 2 giây
+  if (millis() - lastMsg >4750) {  // publish mỗi 2 giây
     lastMsg = millis();
 
     float temperature, humidity;
     int rainAnalog, rainDigital;
     fakevalue(temperature, humidity, rainAnalog, rainDigital);
-
+ digitalWrite(LED_PIN, HIGH);
     // Tạo JSON
     JsonDocument doc;
     doc["temperature"] = temperature;
@@ -128,5 +129,7 @@ void loop() {
     client.publish("test/esp", buffer);
     Serial.print("Published: ");
     Serial.println(buffer);
+    delay(250);
+    digitalWrite(LED_PIN, LOW);
   }
 }
