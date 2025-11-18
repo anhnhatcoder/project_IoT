@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <title>IoT Dashboard</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link
+      rel="shortcut icon"
+      href="data:image/webp;base64,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"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+
+    <style>
+      :root {
+        --bg: #0f1724;
+        --muted: #9aa4b2;
+        --card-bg: rgba(255, 255, 255, 0.03);
+      }
+      * {
+        box-sizing: border-box;
+        font-family: "Inter", system-ui, sans-serif;
+      }
+      body {
+        margin: 0;
+        background: linear-gradient(180deg, #071127 0%, #07101a 100%);
+        color: #e6eef6;
+        height: 100vh;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 18px;
+      }
+      h1 {
+        font-size: 20px;
+        margin: 0;
+      }
+
+      /* --- LAYOUT GRID CHÍNH --- */
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* Chia 3 cột đều nhau */
+        grid-template-rows: auto auto; /* Tự động chỉnh chiều cao dòng */
+        gap: 16px;
+      }
+
+      .card {
+        background: var(--card-bg);
+        padding: 14px;
+        border-radius: 10px;
+        box-shadow: 0 6px 18px rgba(2, 6, 23, 0.6);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      /* Card trải rộng 2 cột (cho phần điều khiển) */
+      .wide {
+        grid-column: 1 / span 2;
+      }
+
+      /* --- NEW: Cột bên phải chứa linh kiện --- */
+      .tall-card {
+        grid-column: 3 / 4; /* Nằm ở cột 3 */
+        grid-row: 1 / span 2; /* Kéo dài từ dòng 1 xuống dòng 2 */
+        display: flex;
+        flex-direction: column;
+        max-height: 600px; /* Giới hạn chiều cao */
+        overflow: hidden;
+      }
+
+      .component-list {
+        overflow-y: auto; /* Cho phép cuộn nếu danh sách dài */
+        padding-right: 5px;
+        margin-top: 10px;
+      }
+
+      /* Style cho từng món linh kiện */
+      .comp-item {
+        display: flex;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.2);
+        padding: 10px;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        transition: transform 0.2s;
+      }
+      .comp-item:hover {
+        background: rgba(255, 255, 255, 0.05);
+      }
+      .comp-item img {
+        width: 50px;
+        height: 50px;
+        object-fit: contain;
+        margin-right: 12px;
+      }
+      .comp-info h4 {
+        margin: 0 0 4px 0;
+        font-size: 14px;
+        color: #7be495;
+      }
+      .comp-info p {
+        margin: 0;
+        font-size: 11px;
+        color: var(--muted);
+        line-height: 1.3;
+      }
+
+      /* Scrollbar đẹp */
+      .component-list::-webkit-scrollbar {
+        width: 6px;
+      }
+      .component-list::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      .component-list::-webkit-scrollbar-thumb {
+        background: #34495e;
+        border-radius: 3px;
+      }
+
+      /* --- Các class cũ --- */
+      .kpi {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .val {
+        font-size: 28px;
+        font-weight: 600;
+      }
+      .muted {
+        color: var(--muted);
+        font-size: 13px;
+      }
+      canvas {
+        width: 100% !important;
+        height: 220px !important;
+      }
+      /* --- BUTTON STYLES MỚI --- */
+      .btn {
+        padding: 10px 14px;
+        border-radius: 8px;
+        border: 0;
+        color: #071127;
+        font-weight: 700; /* Chữ đậm hơn chút cho đẹp */
+        cursor: pointer;
+        margin-right: 5px;
+
+        /* QUAN TRỌNG: Giúp hiệu ứng diễn ra mượt mà */
+        transition: all 0.1s ease-in-out;
+
+        /* Thêm bóng đổ nhẹ để nút trông nổi lên */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Hiệu ứng khi đưa chuột vào (Hover) */
+      .btn:hover {
+        filter: brightness(1.15); /* Sáng lên một chút */
+        transform: translateY(-2px); /* Nổi lên trên 2px */
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* Bóng đổ đậm hơn */
+      }
+
+      /* Hiệu ứng khi NHẤN CHUỘT XUỐNG (Active) */
+      .btn:active {
+        transform: scale(0.95) translateY(0); /* Thu nhỏ 95% và trở về vị trí cũ */
+        filter: brightness(0.9); /* Tối đi một chút */
+        box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2); /* Bóng đổ nhỏ lại */
+      }
+
+      .btn-on {
+        background: #7be495;
+      }
+      .btn-off {
+        background: #ffd36b;
+      }
+      .weather-emoji {
+        font-size: 64px;
+        line-height: 1;
+        margin: 0;
+        text-align: center;
+      }
+
+      /* Responsive: Khi màn hình nhỏ thì xếp dọc hết */
+      @media (max-width: 900px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+        .wide {
+          grid-column: auto;
+        }
+        .tall-card {
+          grid-column: auto;
+          grid-row: auto;
+          max-height: 400px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Smart Garden IoT</h1>
+        <div class="muted small" id="connStatus">Đang kết nối server...</div>
+      </header>
+
+      <div class="grid">
+        <div class="card">
+          <div class="kpi">
+            <div>
+              <div class="muted">Nhiệt độ</div>
+              <div class="val" id="tempVal">-- °C</div>
+            </div>
+            <div style="text-align: right">
+              <div class="muted">Độ ẩm</div>
+              <div class="val" id="humVal">-- %</div>
+            </div>
+          </div>
+          <hr style="opacity: 0.06; margin: 12px 0" />
+          <canvas id="tempHumChart"></canvas>
+        </div>
+
+        <div class="card">
+          <div class="muted">Thời tiết</div>
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              height: 80%;
+              justify-content: center;
+              flex-direction: column;
+            "
+          >
+            <div id="weatherIcon" class="weather-emoji">☀️</div>
+            <div id="rainText" class="muted" style="margin-top: 10px">
+              Không mưa
+            </div>
+          </div>
+        </div>
+
+        <div class="card tall-card">
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              margin-bottom: 10px;
+            "
+          >
+            <div class="muted" style="font-weight: bold; color: #42a5f5">
+              LINH KIỆN DỰ ÁN
+            </div>
+            <div class="muted small">Project IoT</div>
+          </div>
+          <hr style="opacity: 0.1; margin: 0 0 10px 0" />
+
+          <div class="component-list">
+            <div class="comp-item">
+              <img
+                src="https://tse4.mm.bing.net/th/id/OIP.JBUM0ML-U84unz_9DHg5jAHaHa?rs=1&pid=ImgDetMain&o=7&rm=3"
+                alt="ESP32"
+              />
+              <div class="comp-info">
+                <h4>ESP32</h4>
+                <p>Vi điều khiển trung tâm, tích hợp Wifi/Bluetooth.</p>
+              </div>
+            </div>
+            <div class="comp-item">
+              <img
+                src="https://www.bing.com/th/id/OIP.7b2VIjwJU8rzCUtO8btj0gHaEw?w=219&h=211&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2"
+                alt="Pi"
+              />
+              <div class="comp-info">
+                <h4>Raspberry Pi</h4>
+                <p>Server Python xử lý dữ liệu và chạy Dashboard.</p>
+              </div>
+            </div>
+            <div class="comp-item">
+              <img
+                src="https://th.bing.com/th/id/OIP.3jTKUxloErBjfy6MxfgCogHaHa?w=193&h=193&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
+                alt="DHT"
+              />
+              <div class="comp-info">
+                <h4>DHT22</h4>
+                <p>Cảm biến đo nhiệt độ và độ ẩm môi trường.</p>
+              </div>
+            </div>
+            <div class="comp-item">
+              <img
+                src="https://th.bing.com/th/id/OIP.ZgIKw23w8Js6hnfqpuap-wHaHa?w=187&h=187&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
+                alt="Rain"
+              />
+              <div class="comp-info">
+                <h4>Cảm biến mưa</h4>
+                <p>Phát hiện trời mưa để đóng mở mái che.</p>
+              </div>
+            </div>
+            <div class="comp-item">
+              <img
+                src="https://th.bing.com/th/id/OIP.Sbr1ZJUVghJsSiJ4oJrueAHaHa?w=156&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
+                alt="Breadboard"
+              />
+              <div class="comp-info">
+                <h4>Cảm biến độ ẩm đất</h4>
+                <p>Phát hiện tình trạng đất khô hay ẩm.</p>
+              </div>
+            </div>
+            <div class="comp-item">
+              <img
+                src="https://th.bing.com/th/id/OIP.qKqZIWQPuEIxbLFoC64kXAHaHa?w=176&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
+                alt="Wifi"
+              />
+              <div class="comp-info">
+                <h4>Relay 5v</h4>
+                <p>Đóng mở máy bơm cấp nước cho cây.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card wide">
+          <div style="display: flex; justify-content: space-between">
+            <div>
+              <div class="muted">Thông tin Cây trồng</div>
+              <h2 id="plantName" style="margin: 5px 0">Cây cà chua 🍅</h2>
+              <div id="plantStatus" class="muted">--</div>
+            </div>
+            <div style="text-align: right">
+              <div class="muted">Đất / Lá</div>
+              <div id="soilMoist" class="val" style="font-size: 20px">-- %</div>
+              <div id="leafTemp" class="muted">-- °C</div>
+            </div>
+          </div>
+          <hr style="opacity: 0.06; margin: 12px 0" />
+
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+            "
+          >
+            <div>
+              <div class="muted">Trạng thái Máy bơm</div>
+              <div style="margin-top: 5px">
+                <span
+                  id="pumpState"
+                  style="font-weight: bold; margin-right: 10px; color: #ffd36b"
+                  >TẮT</span
+                >
+              </div>
+            </div>
+            <div>
+              <button onclick="controlPump('ON')" class="btn btn-on">
+                BẬT BƠM
+              </button>
+              <button onclick="controlPump('OFF')" class="btn btn-off">
+                TẮT BƠM
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer>Cập nhật lần cuối: <span id="lastUpdate">--</span></footer>
+    </div>
+
+    <script>
+      // --- LOGIC GIỮ NGUYÊN NHƯ CŨ ---
+      const socket = io();
+      const el = (id) => document.getElementById(id);
+
+      socket.on("connect", () => {
+        el("connStatus").textContent = "Đã kết nối server";
+        el("connStatus").style.color = "#7be495";
+      });
+      socket.on("disconnect", () => {
+        el("connStatus").textContent = "Mất kết nối";
+        el("connStatus").style.color = "#ff7b7b";
+      });
+      socket.on("json_data", (data) => {
+        const time = new Date().toLocaleTimeString();
+        el("lastUpdate").textContent = time;
+        const temp = data.temperature || 0;
+        const hum = data.humidity || 0;
+        const rain = data.rain == 1 || data.rain == true;
+
+        el("tempVal").textContent = temp.toFixed(1) + " °C";
+        el("humVal").textContent = hum.toFixed(0) + " %";
+        addDataPoint(time, temp, hum);
+        updateWeatherEmoji(rain, hum);
+
+        if (data.plant) {
+          el("plantName").textContent = data.plant.name || "Chưa rõ";
+          el("soilMoist").textContent = (data.plant.soilMoist || 0) + " %";
+          el("leafTemp").textContent = (data.plant.leafTemp || 0) + " °C";
+          const st = data.plant.status || "warn";
+          const stEl = el("plantStatus");
+          if (st == "healthy") {
+            stEl.textContent = "Khỏe mạnh";
+            stEl.style.color = "#7be495";
+          } else {
+            stEl.textContent = "Cần chú ý";
+            stEl.style.color = "#ffd36b";
+          }
+        }
+      });
+      socket.on("pump_state", (state) => {
+        const s = state.toUpperCase();
+        el("pumpState").textContent = s === "ON" ? "ĐANG CHẠY" : "ĐÃ TẮT";
+        el("pumpState").style.color = s === "ON" ? "#7be495" : "#ffd36b";
+      });
+      function controlPump(cmd) {
+        socket.emit("control_pump", cmd);
+      }
+      function updateWeatherEmoji(isRaining, humidity) {
+        const iconEl = el("weatherIcon");
+        const textEl = el("rainText");
+        if (isRaining) {
+          iconEl.textContent = "🌧️";
+          textEl.textContent = "Đang mưa";
+          textEl.style.color = "#42a5f5";
+        } else if (humidity > 80) {
+          iconEl.textContent = "☁️";
+          textEl.textContent = "Nhiều mây";
+          textEl.style.color = "#b0bec5";
+        } else {
+          iconEl.textContent = "☀️";
+          textEl.textContent = "Nắng đẹp";
+          textEl.style.color = "#ffd700";
+        }
+      }
+      const ctx = el("tempHumChart").getContext("2d");
+      const timeLabels = [],
+        tempData = [],
+        humData = [];
+      const chart = new Chart(ctx, {
+        type: "line",
+        data: {
+          labels: timeLabels,
+          datasets: [
+            {
+              label: "Nhiệt độ",
+              data: tempData,
+              borderColor: "#ff8a65",
+              yAxisID: "y",
+            },
+            {
+              label: "Độ ẩm",
+              data: humData,
+              borderColor: "#42a5f5",
+              yAxisID: "y1",
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          animation: false,
+          scales: {
+            y: { type: "linear", position: "left" },
+            y1: {
+              type: "linear",
+              position: "right",
+              grid: { drawOnChartArea: false },
+            },
+          },
+        },
+      });
+      function addDataPoint(t, temp, hum) {
+        if (timeLabels.length > 20) {
+          timeLabels.shift();
+          tempData.shift();
+          humData.shift();
+        }
+        timeLabels.push(t);
+        tempData.push(temp);
+        humData.push(hum);
+        chart.update();
+      }
+    </script>
+  </body>
+</html>
